@@ -1,14 +1,4 @@
-dec = 65
-octal = 0o101
-hexadecimal = 0x41
-binary = 0b01000001
-print(dec,octal,hexadecimal,binary)
-print(chr(dec),chr(octal),chr(hexadecimal),chr(binary))
-print(ord('B'),ord('Z'),ord('a'),ord('2')) # 66 90 97 50
-
-value = 65
-print(bin(value))
-print(oct(value))
-print(hex(value))
-
+# 화씨를 섭씨로 바꾸는 코드
+fahrenheit = float(input('Input Fahrenheit : '))
+print(f'Fahrenheit : {fahrenheit}F, Celsius : {((fahrenheit - 32.0) * 5.0/9.0):.4f}C')
 

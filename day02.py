@@ -1,22 +1,11 @@
-# (100°F - 32) x 5/9 = 37.778°C
-# fahrenheit = float(input('Input Fahrenheit : '))
-# print(f'Fahrenheit : {fahrenheit}F, Celsius : {((fahrenheit - 32.0) * 5.0/9.0):.4f}C')
+letter = input("Input alphabet letter : ")
+vowels = {'a','e','i','o','u'}
+print(type(vowels))
 
-# (0°C × 9/5) + 32 = 32°F
-# menu = input("1) Fahrenheit -> Celsius  2) Celsius -> Fahrenheit    3) Quit program : ")
-#
-# if menu == '1':
-#     fahrenheit = float(input('Input Fahrenheit : '))
-#     print(f'Fahrenheit : {fahrenheit}°F, Celsius : {((fahrenheit - 32.0) * 5.0 / 9.0):.4f}°C')
-# elif menu == '2':
-#     celsius = float(input('Input Celsius : '))
-#     print(f'Celsius : {celsius}°C, Fahrenheit : {((celsius * 9.0/5.0) + 32.0):.4f}°F')
-# else:
-#     print('Quit program.')
-
-
-temp = []
-if temp:
-    print('not empty list')
+if letter in vowels:
+    print(f'{letter} is a vowel.')
 else:
-    print('empty list')
+    print(f'{letter} is a consonant.')
+
+vowels = 'aeiou'
+print(type(vowels))

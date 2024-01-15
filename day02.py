@@ -1,34 +1,22 @@
-# univ = "Inha university"
-# print(univ)
-# print(univ[5])
-# univ[5] = 'U' // immmutable
-# print(univ[5])
+# y = x + 5 (error: x 초기화 하지 않음)
+# print(y)
 
-# subjects = ['python','c++','linux','data structure','database']
-# print(subjects)
-# print(subjects[3])
-# subjects[3] = 'data structure & algorithm' # mutable
-# print(subjects)
+x = 7
+y = x + 5
+print(y)
 
 
-# case-sensitive
-abc = 7
-Abc = 8
-ABC = 6
-print(abc,Abc,ABC)
-
-test9 = 77
-# 9test = 77 (error: 변수 이름 숫자로 시작 불가)
-_9test = 71
-print(test9,_9test)
-
-# False = 123 (error: reserve words)
+print(type(3.14))
+print(type(3.14) == float)
+print(isinstance(3.14, float))
+print(isinstance("Inha", float))
+print(isinstance(55, float))
 
 
-
-
-
-
-
+artists = ['BTS', 'newjeans', '핑클', 'SES', 'HOT', 'blackpink']
+groups = artists
+print(artists, groups)
+artists[2] = 'seventeen'
+print(artists, groups)
 
 

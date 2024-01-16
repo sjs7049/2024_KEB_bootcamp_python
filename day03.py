@@ -1,10 +1,16 @@
-# # preview: 예외 던지기
-# subjects = "python c++ database linux"
-# print(subjects.isalnum())
+# subjects = {'python' : 'Kim', 'c++' : 'sung', 'data structure' : 'kim', 'database' : 'kang'}
+# print("{0[python]} {0[data structure]}".format(subjects))
 
-# subject = input("수강신청과목 입력 : ")
-# try:
-#     print(f'해당 과목은 존재합니다. 위치는 {subjects.index(subject)}번 인덱스입니다.')
-# except ValueError:
-#     print('해당 과목이 존재하지 않습니다.')
+# prime number
+number = int(input("Input number : "))
+cnt = 0
+i = 1
+while i <= number:
+    if number % i == 0:
+        cnt += 1
+    i += 1
 
+if cnt == 2:
+    print(f'{number} is prime number.')
+else:
+    print(f'{number} is not prime number.')

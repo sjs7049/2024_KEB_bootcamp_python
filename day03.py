@@ -1,18 +1,13 @@
-# prime number
-number = int(input("Input number : "))
-is_prime = True
+univ = "inha"
+i = 0
+while i <len(univ):
+    print(univ[i], end=' ')
+    i += 1
 
-if number < 2:
-    print(f'{number} is not prime number.')
-else:
-    i = 2
-    while i < number:
-        if number % i == 0:
-            is_prime = False
-            break
-        i += 1
+for letter in univ:
+    print(letter, end=' ') # best
 
-    if is_prime:
-        print(f'{number} is prime number.')
-    else:
-        print(f'{number} is not prime number.')
+print()
+
+for k in range(len(univ)):
+    print(univ[k], end=' ')

@@ -1,16 +1,13 @@
-university = "Ihha\nUniversity"
-# university = r"Ihha\nUniversity" # raw string
-print(university)
+course = "2024 KEB Bootcamp"
+print(course)
+# list_course = course.split()
+list_course = course.split('B')
+print(list_course)
 
-number1 = input("First number : ")
-number2 = input("Second number : ")
-print(number1 + number2) # concatenation
-print(number1 * 3) # duplicate
-print(number1 + 3) # type error
+numbers = input("FirstNumber SecondNumber : ").split()
+# print(numbers[0] + numbers[1]) # concatenation
+print(int(numbers[0]) + int(numbers[1])) # arithmatic operation
 
-university = "Ihha University!"
-print(university[:4])
-print(university[:-11]) # reverse index
-print(university[:len(university)]) # print(university[:16])
-print(university[::1]) # incresing 1
-print(university[::2]) # incresing 2
+subjects = ["python", "c++", "database"]
+subjects_string = " / ".join(subjects)
+print(subjects_string)

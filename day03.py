@@ -1,16 +1,17 @@
 # prime number
-number = int(input("Input number : "))
-is_prime = True
+numbers = input("Input first second number : ").split()
+n1 = int(numbers[0])
+n2 = int(numbers[1])
 
-if number < 2:
-    print(f'{number} is not prime number.')
-else:
-    for i in range(2,number):
-        if number % i == 0:
-            is_prime = False
-            break
+for number in range(n1,n2+1):
+    is_prime = True
 
-    if is_prime:
-        print(f'{number} is prime number.')
+    if number < 2:
+        pass # 어떠한 출력 없이 지나가고 싶을 때
     else:
-        print(f'{number} is not prime number.')
+        for i in range(2, number):
+            if number % i == 0:
+                is_prime = False
+                break
+        if is_prime:
+            print(number, end=' ')

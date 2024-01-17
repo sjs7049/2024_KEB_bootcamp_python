@@ -1,35 +1,40 @@
-import random
-drinks_foods = {"위스키": "초콜릿", "와인": "치즈", "소주": "삼겹살", "고량주": "양꼬치"}
-print(drinks_foods)
-print(drinks_foods.pop("고량주"))
-print(drinks_foods)
+# 8.1 Make an English-to-French dictionary called e2f and print it.
+# Here are your starter words: dog is chien, cat is chat, and walrus is morse
+e2f = dict(dog = 'chien', cat = 'chat', walrus = 'morse')
+print(e2f)
 
+# 8.2 Using your three-word dictionary e2f, print the French word for walrus.
+print(e2f['walrus'])
 
-# del drinks_foods["위스키"]
-# drinks_foods["사케"] = "광어회"
-japan_drinks_foods = {"사케": "광어회", "위스키": "낙곱새"}
-drinks_foods.update(japan_drinks_foods)
-# drink = input(drinks_foods.keys())
-drinks_food_keys = list(drinks_foods)
+# 8.3 Make a French-to-English dictionary called f2e from e2f. Use the items method.
+f2e = dict()
+for english, french in e2f.items():
+    f2e[french] = english
+print(f2e)
 
-# random.choice(): random으로 추출해주는 함수
+# 8.4 Print the English equivalent of the French word chien.
+print(f2e['chien'])
 
-while True:
-    menu = input(f'다음 술 중에 고르세요. \n1) {drinks_food_keys[0]},   2) {drinks_food_keys[1]},    3) {drinks_food_keys[2]},  4) {drinks_food_keys[3]},    5) {drinks_food_keys[4]},   6) 아무거나,    7) 종료 : ')
-    if menu == '1':
-        print(f'{drinks_food_keys[0]}에 어울리는 안주는 {drinks_foods[drinks_food_keys[0]]}입니다.')
-    elif menu == '2':
-        print(f'{drinks_food_keys[1]}에 어울리는 안주는 {drinks_foods[drinks_food_keys[1]]}입니다.')
-    elif menu == '3':
-        print(f'{drinks_food_keys[2]}에 어울리는 안주는 {drinks_foods[drinks_food_keys[2]]}입니다.')
-    elif menu == '4':
-        print(f'{drinks_food_keys[3]}에 어울리는 안주는 {drinks_foods[drinks_food_keys[3]]}입니다.')
-    elif menu == '5':
-        print(f'{drinks_food_keys[4]}에 어울리는 안주는 {drinks_foods[drinks_food_keys[4]]}입니다.')
-    elif menu == '6':
-        random_drink = random.choice(drinks_food_keys)
-        print(f'{random_drink}에 어울리는 안주는 {drinks_foods[random_drink]}입니다.')
-    elif menu == '7':
-        print(f'다음에 또 오세요.')
-        break
+# 8.5 Print the set of English words from e2f.
+print(set(e2f))
 
+# 8.6 Make a multilevel dictionary called life. Use these strings for the topmost keys:
+# 'animals', 'plants', and 'other'. Make the 'animals' key refer to another dictio‐
+# nary with the keys 'cats', 'octopi', and 'emus'. Make the 'cats' key refer to a list
+# of strings with the values 'Henri', 'Grumpy', and 'Lucy'. Make all the other keys
+# refer to empty dictionaries.
+life = dict(animals = {'cats': ['Henri', 'Grumpy', 'Lucy'], 'octopi': ' ', 'emus': ' '}, plants = ' ', other = ' ')
+
+# 8.7 Print the top-level keys of life.
+print(life.keys())
+
+# 8.8 Print the keys for life['animals'].
+print(life['animals'].keys())
+
+# 8.9 Print the values for life['animals']['cats'].
+print(life['animals']['cats'])
+
+# 8.10 Use a dictionary comprehension to create the dictionary squares.
+# Use range(10) to return the keys, and use the square of each key as its value.
+squares = {key : (key * key) for key in range(10)}
+print(squares)

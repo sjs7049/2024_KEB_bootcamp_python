@@ -13,7 +13,7 @@ for number in range(n1, n2 + 1):
         pass
     else:
         i = 2
-        while i*i < number:
+        while i*i <= number:
             if number % i == 0:
                 is_prime = False
                 break

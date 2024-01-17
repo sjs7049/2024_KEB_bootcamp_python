@@ -1,13 +1,11 @@
-# subjects = ["a", "b", "c"]
-import copy
+squares = list()
+for i in range(1,6):
+    squares.append(i*i)
+print(squares)
 
-subjects = ["a", ["b", "c"], "d"]
-a = subjects
-b = subjects.copy()
-c = list(subjects)
-d = subjects[:]
-e = copy.deepcopy(a)
-print(subjects, a, b, c, d, e)
-subjects[1][1] = "x"
-print(subjects, a, b, c, d, e)
+squares_list = [i*i for i in range(1,6)]
+print(squares_list)
+
+even_list = [i for i in range(1,6) if i % 2 == 0]
+print(even_list)
 

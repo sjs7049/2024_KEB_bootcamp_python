@@ -1,11 +1,25 @@
-squares = list()
-for i in range(1,6):
-    squares.append(i*i)
-print(squares)
+# sugang = dict(python = 'kim', cpp = 'sung', db = 'kang')
+# print(sugang)
+# sugang['datastructure'] = 'kim' # add
+# print(sugang)
+# sugang['datastructure'] = 'park' # update
+# print(sugang)
+#
+# print(sugang['db'])
+# print(sugang.get('db'))
+# print(sugang.get('opensource'))
+# print(sugang.get('opensource', 'not exist'))
 
-squares_list = [i*i for i in range(1,6)]
-print(squares_list)
 
-even_list = [i for i in range(1,6) if i % 2 == 0]
-print(even_list)
+# sugang = dict(python = 'kim', cpp = 'sung', db = 'kang')
+# for subject, professor in sugang.items():
+#     print(f'{subject} 과목 담당교수는 {professor}입니다.')
+#
+# for k in sugang.keys():
+#     print(k)
+# for v in sugang.values():
+#     print(v)
+# for s in sugang.items():
+#     print(s)
+
 

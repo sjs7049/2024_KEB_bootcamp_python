@@ -1,10 +1,13 @@
-# def squares(n):
-#     return n * n
+def my_range(first=0, last=10, step=1):
+    number = first
+    while number < last:
+        yield number
+        number += step
 
-even_numbers = [i for i in range(51) if i % 2 == 0]
-print(even_numbers)
-# print(list(map(squares, even_numbers)))
-#
-# print(list(map(lambda x : x ** 2, even_numbers)))
-z = lambda x : x ** 2
-print(list(map(z,even_numbers)))
+r = my_range()
+print(r, type(r))
+
+for x in r:
+    print(x)
+for x in r:
+    print(x)

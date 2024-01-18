@@ -1,14 +1,44 @@
-# def out_func(nout):
-#     def inner_func(nin):
-#         return nout * nout
-#     return inner_func(nout)
+# prime 2
+def isprime(n) -> bool:
+    '''
+    매개변수로 넘겨 받은 수가 소수인지의 여부를 boolean으로 return
+    :param n: 판정할 매개변수
+    :return: 소수이면 true, 소수가 아니면 False
+    '''
+    if n < 2:
+        return False
+    else:
+        i = 2
+        while i*i <= n:
+            if n % i == 0:
+                return False
+            i += 1
+        return True
 
-def out_func(nout):
-    def inner_func():
-        return nout * nout
-    return inner_func
+while True:
+    menu = input("1) Fahrenheit -> Celsius  2) Celsius -> Fahrenheit    3) Is prime?    "
+                 "4) Prime output   5) Quit program : ")
 
-x = out_func(9)
-print(type(x))
-print(x)
-print(x())
+    if menu == '1':
+        fahrenheit = float(input('Input Fahrenheit : '))
+        print(f'Fahrenheit : {fahrenheit}°F, Celsius : {((fahrenheit - 32.0) * 5.0 / 9.0):.4f}°C')
+    elif menu == '2':
+        celsius = float(input('Input Celsius : '))
+        print(f'Celsius : {celsius}°C, Fahrenheit : {((celsius * 9.0 / 5.0) + 32.0):.4f}°F')
+    elif menu == '3':
+        number = int(input('Input number : '))
+        if isprime(number):
+            print(f'{number} is prime number.')
+        else:
+            print(f'{number} is not prime number.')
+    elif menu == '4':
+        n1, n2 = map(int, input('Input first & second number : ').split())
+        n1, n2 = min(n1, n2), max(n1, n2)
+
+        for number in range(n1, n2 + 1):
+            if isprime(number):
+                print(number, end=' ')
+        print()
+    elif menu == '5':
+        print('Quit program.')
+        break

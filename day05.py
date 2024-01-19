@@ -1,4 +1,3 @@
-# homework: 9장 연습문제
 # 9.1 Define a function called good() that returns the following list: ['Harry', 'Ron', 'Hermione'].
 def good():
     return ['Harry', 'Ron', 'Hermione']
@@ -20,18 +19,14 @@ for x in oods:
 print(ood[2])
 
 # 9.3 Define a decorator called test that prints 'start' when a function is called, and 'end' when it finishes.
-def test(f):
-    def func(*args):
+def test():
+    def func():
         print('start')
-        r = f(*args)
         print('end')
     return func
 
-@test
-def string():
-    print('Have a nice day.')
-
-string()
+dec = test()
+dec()
 
 # 9.4 Define an exception called OopsException. Raise this exception to see what happens.
 # Then, write the code to catch this exception and print 'Caught an oops'.
@@ -39,6 +34,6 @@ class OopsException(Exception):
     pass
 
 try:
-    raise OopsException
+    raise OopsException('panic')
 except OopsException as exp:
     print('Caught an oops')

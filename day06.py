@@ -1,21 +1,26 @@
-# Open Closed Principle
-def test(f):
+# factorial example
+def factorial_repetition(n) -> int:
     '''
-    decorator 함수, 함수 시작하면 start 출력, 함수 끝나면 end 출력
-    :param f: function
-    :return: closure function
+    반복문을 이용한 factorial 함수
+    :param n: 정수, int
+    :return: 팩토리얼 값, int
     '''
-    # def inner(*args, **kwargs)
-    def inner(): # *args라 인수가 없어도 됨
-        print('start')
-        # result = f(*args, **kwargs)
-        f()
-        print('end')
-        # return result
-    return inner
+    result = 1
+    for i in range(2, n+1):
+        result *= i
+    return result
 
-@test
-def greeting():
-    print('안녕하세요~')
+def factorial_recursion(n):
+    '''
+    재귀함수를 이용한 factirial 함수
+    :param n: 정수, int
+    :return: function
+    '''
+    if n == 1:
+        return n
+    else:
+        return n * factorial_recursion(n-1)
 
-greeting()
+number = int(input("number: "))
+print(factorial_repetition(number))
+print(factorial_recursion(number))

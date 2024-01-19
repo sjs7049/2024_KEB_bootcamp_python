@@ -1,15 +1,19 @@
-def get_odds(n) -> int:
-    '''
-    1부터 n까지의 홀수를 반환
-    :param n: int
-    :return: int
-    '''
-    for i in range(1, n+1, 2):
-        yield i
 
-cnt = 0
-odds = get_odds(9)
-for odd in odds:
-    cnt += 1
-    if cnt == 3:
-        print(f'Third number is {odd}.')
+def test(f):
+    '''
+    decorator 함수, 함수 시작하면 start 출력, 함수 끝나면 end 출력
+    :param f: function
+    :return: closure function
+    '''
+    def inner(*args, **kwargs): # *args라 인수가 없어도 됨
+        print('start')
+        result = f(*args, **kwargs)
+        print('end')
+        return result
+    return inner
+
+@test
+def greeting():
+    print('안녕하세요~')
+
+greeting()

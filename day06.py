@@ -1,10 +1,15 @@
-def good() -> list:
+def get_odds(n) -> int:
     '''
-    chapter 9 things to do. 91.
-    :return: list
+    1부터 n까지의 홀수를 반환
+    :param n: int
+    :return: int
     '''
-    harry_porter = input().split()
-    return harry_porter
+    for i in range(1, n+1, 2):
+        yield i
 
-print(good())
-
+cnt = 0
+odds = get_odds(9)
+for odd in odds:
+    cnt += 1
+    if cnt == 3:
+        print(f'Third number is {odd}.')

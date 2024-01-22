@@ -1,37 +1,89 @@
-# module
-# from mymath import *
-import mymath as mm
 
-while True:
-    menu = input("1) Fahrenheit -> Celsius   2) Celsius -> Fahrenheit   3) Prime1   4) Prime2   5) Quit program : ")
 
-    if menu == '1':
-        fahrenheit = float(input('Input Fahrenheit : '))
-        print(f'Fahrenheit : {fahrenheit}F, Celsius : {mm.fahrenheit_to_celsius(fahrenheit):.4f}C')
-    elif menu == '2':
-        celsius = float(input('Input Celsius : '))
-        print(f'Celsius : {celsius}C, Fahrenheit : {mm.celsius_to_fahrenheit(celsius):.4f}F')
-    elif menu == '3':
-        number = int(input("Input number : "))
-        if mm.isprime(number):
-            print(f'{number} is prime number')
-        else:
-            print(f'{number} is NOT prime number!')
-    elif menu == '4':
-        numbers = input("Input first second number : ").split()
-        n1 = int(numbers[0])
-        n2 = int(numbers[1])
+# 10.7 Call print(hydrogen). In the definition of Element, change the name of the
+# method dump to __str__, create a new hydrogen object, and call print(hydrogen)
+# again.
+class Element:
+    def __init__(self, name, symbol, number):
+        self.name = name
+        self.symbol = symbol
+        self.number = number
 
-        if n1 > n2:
-            n1, n2 = n2, n1
+    def __str__(self):
+        return f'name = {self.name}, symbol = {self.symbol}, number = {self.number}'
 
-        for number in range(n1, n2 + 1):
-            if mm.isprime(number):
-                print(number, end=' ')
-        print()
-    elif menu == '5':
-        print('Terminate Program.')
-        break
-    else:
-        print('Invalid Menu!')
+hydrogen = Element('Hydrogen', 'H', 1)
+print(hydrogen)
 
+
+# 10.8 Modify Element to make the attributes name, symbol, and number private. Define
+# a getter property for each to return its value.
+class Element:
+    def __init__(self, name, symbol, number):
+        self.__name = name
+        self.__symbol = symbol
+        self.__number = number
+
+    @property
+    def name(self):
+        return self.__name
+
+    @property
+    def symbol(self):
+        return self.__symbol
+
+    @property
+    def number(self):
+        return self.__number
+
+hydrogen = Element('Hydrogen', 'H', 1)
+print(hydrogen.name)
+
+# 10.9 Define three classes: Bear, Rabbit, and Octothorpe. For each, define only one
+# method: eats(). This should return 'berries' (Bear), 'clover' (Rabbit), or
+# 'campers' (Octothorpe). Create one object from each and print what it eats.
+class Bear:
+    def eats(self):
+        return 'berries'
+
+class Rabbit:
+    def eats(self):
+        return 'clover'
+
+class Octothorpe:
+    def eats(self):
+        return 'campers'
+
+bear = Bear()
+rabbit = Rabbit()
+octothorpe = Octothorpe()
+
+print(bear.eats(), rabbit.eats(), octothorpe.eats())
+
+# 10.10 Define these classes: Laser, Claw, and SmartPhone. Each has only one method:
+# does(). This returns 'disintegrate' (Laser), 'crush' (Claw), or 'ring' (Smart
+# Phone). Then, define the class Robot that has one instance (object) of each of these.
+# Define a does() method for the Robot that prints what its component objects do.
+class Laser:
+    def does(self):
+        return 'disintegrate'
+
+class Claw:
+    def does(self):
+        return 'crush'
+
+class SmartPhone:
+    def does(self):
+        return 'ring'
+
+class Robot:
+    def __init__(self):
+        self.laser = Laser()
+        self.claw = Claw()
+        self.smartphone = SmartPhone()
+
+    def does(self):
+        return f'{self.laser.does()}, {self.claw.does()}, {self.smartphone.does()}'
+
+robot = Robot()
+print(robot.does())

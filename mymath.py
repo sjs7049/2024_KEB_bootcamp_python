@@ -1,5 +1,5 @@
 # module
-#from mymath import *
+# from mymath import *
 import mymath as mm
 
 while True:

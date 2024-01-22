@@ -1,57 +1,33 @@
-class FlyingBehavior:
-    def fly(self):
-        return f'하늘을 훨훨 날아갑니다~'
+def isprime(n) -> bool:
+    """
+    A function that returns as a boolean whether the number passed as a parameter is a prime number.
+    :param n: Parameter to judge
+    :return: True if prime number, False if not prime number.
+    """
+    if n < 2:
+        return False
+    else:
+        i = 2
+        while i*i <= n:
+            if n % i == 0:
+                return False
+            i += 1
+        return True
 
-class Nofly(FlyingBehavior):
-    def fly(self):
-        return f'하늘을 날 수 업습니다.'
 
-class FlyWithWings(FlyingBehavior):
-    def fly(self):
-        return f'날개로 하늘을 훨훨 날아갑니다~'
+def fahrenheit_to_celsius(fahrenheit) -> float:
+    """
+    Function to convert Fahrenheit temperature to Celsius temperature
+    :param fahrenheit:
+    :return: celsius temperature
+    """
+    return (fahrenheit - 32.0) * 5.0 / 9.0
 
-class SwimmingBehavior:
-    def swim(self):
-        return f'수영을 합니다.'
 
-class Pokemon:
-    def __init__(self, name, hp, fly):
-        self.__name = name
-        self.hp = hp
-        self.fly_behavior = fly # aggregation (has-a)
-
-    def attack(self):
-        print("공격~")
-
-    @property
-    def name(self):
-        return self.__name
-
-    @name.setter
-    def name(self, new_name):
-        self.__name = new_name
-
-    #name = property(get_name, set_name)
-    # magic method 1
-    def __str__(self):
-        return self.__name + "입니다"
-
-    # magic method 2
-    def __add__(self, target):
-        # return self.__name + " + " + target.__name
-        return f'두 포켓몬 체력의 합은 {self.hp + target.hp}입니다.'
-
-class Charizard(Pokemon):
-    pass
-
-class Pikachu(Pokemon):
-    pass
-
-nofly = Nofly()
-p1 = Pikachu("피카츄", 35, nofly)
-wings = FlyWithWings()
-c1 = Charizard("리자몽", 120, wings)
-print(c1.fly_behavior.fly())
-print(p1.fly_behavior.fly())
-print(p1)
-print(c1)
+def celsius_to_fahrenheit(celsius) -> float:
+    """
+    Function to convert Celsius temperature to Fahrenheit temperature
+    :param celsius:
+    :return: fahrenheit temperature
+    """
+    return (celsius*9.0/5.0)+32.0
